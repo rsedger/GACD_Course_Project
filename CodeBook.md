@@ -1,6 +1,6 @@
-# CodeBook
+### CodeBook
 
-This is a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data.
+This is a code book that describes the variables, the data, and any transformations or work that I performed to clean up the data.
 
 ## The data source
 
@@ -51,14 +51,16 @@ There are 5 parts:
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 3. Uses descriptive activity names to name the activities in the data set
-4. Appropriately labels the data set with descriptive activity names.
-5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+4. Labels the data set with descriptive activity names.
+5. Creates a tidy data set with the average of each variable for each activity and each subject.
 
 ## How ```run_analysis.R``` implements the above steps:
 
-* Require ```reshape2``` and ```data.table``` libraries.
-* Load both test and train data
-* Load the features and activity labels.
-* Extract the mean and standard deviation column names and data.
-* Process the data. There are two parts processing test and train data respectively.
-* Merge data set.
+* Requires ```reshape2``` and ```data.table``` libraries.
+* Loads the test and train data
+* Loads the features and activity labels.
+* Extracts the mean and standard deviation column names and data.
+* Processes the data by extracting a subset and assigning descriptive column names.
+* Merges testing and training data sets to recreate the original data.
+* Creates a tidy data file: tidy_data.txt. The values in this file are just the means
+and standard deviations.
